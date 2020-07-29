@@ -1,0 +1,46 @@
+{"device": {"gpu": "cuda:0","cpu": "cpu"},
+ "seed": 2,
+ "preprocessing": {
+    "transformers": {
+         "crop_transform": [false, 32,4],
+         "flip_tansform": [false],
+         "normalization_transform": [true]}
+ },
+  "models": {
+    "sample_sizes": {
+      "shadow_train": 10000,
+      "probe_size": 100,
+      "update_size": 10,
+      "num_train_update_samples": 10000,
+      "num_test_update_samples": 1000
+    },
+    "shadow_model": {
+      "batch_size": 64,
+      "num_epochs": 50,
+      "learning_rate": 0.0005
+    },
+    "update_models": {
+      "update_learning_rate": 0.0005,
+      "csv_batch_size": 500
+    },
+    "encoder":
+    {},
+    "generator": {},
+    "discriminator": {},
+    "GAN": {
+        "num_epochs":15,
+        "mu_dim": 64,
+        "noise_dim": 100,
+      "pretrain_switch": "False"
+
+    }
+  },
+  "image_generator":
+  {
+    "epochs": 200
+  }
+
+
+
+
+}
